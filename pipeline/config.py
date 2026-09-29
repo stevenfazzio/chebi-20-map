@@ -75,7 +75,7 @@ EC_CLASSES = {
 }
 
 # ── HTTP ─────────────────────────────────────────────────────────────────────
-USER_AGENT = "ChEBI-20-datamap/0.1 (research datamap; github.com/stevenfazzio/ChEBI-20-datamap)"
+USER_AGENT = "chebi-20-map/0.1 (research data map; github.com/stevenfazzio/chebi-20-map)"
 REQUEST_TIMEOUT_S = 60
 
 # ── API keys ─────────────────────────────────────────────────────────────────
@@ -296,8 +296,8 @@ CROSS_LAYER_TARGET = 30  # the other map's layer with about this many regions su
 # ── Rendering (stage 05) ─────────────────────────────────────────────────────
 MAP_TITLE = "ChEBI-20 Molecule Map"
 MAP_DATA_PREFIX = "chebi20"  # docs/chebi20_point_data_0.zip and friends sit beside index.html
-MAP_URL = "https://stevenfazzio.com/ChEBI-20-datamap/"  # the user site carries the domain; github.io redirects here
-REPO_URL = "https://github.com/stevenfazzio/ChEBI-20-datamap"
+MAP_URL = "https://stevenfazzio.com/chebi-20-map/"  # the user site carries the domain; github.io redirects here
+REPO_URL = "https://github.com/stevenfazzio/chebi-20-map"
 
 
 def map_url(layout: str) -> str:

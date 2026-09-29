@@ -4,8 +4,8 @@ Two interactive maps of the [ChEBI-20](https://github.com/blender-nlp/MolT5) dat
 placed by the meaning of its ChEBI description on one map and by its chemical structure on the other, with
 regions named at four zoom levels and each map showing where the other disagrees with it.
 
-**Live maps:** https://stevenfazzio.com/ChEBI-20-datamap/ (by description) and
-https://stevenfazzio.com/ChEBI-20-datamap/morgan/ (by structure)
+**Live maps:** https://stevenfazzio.com/chebi-20-map/ (by description) and
+https://stevenfazzio.com/chebi-20-map/morgan/ (by structure)
 
 ## What the maps show
 

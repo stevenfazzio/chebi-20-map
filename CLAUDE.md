@@ -201,8 +201,8 @@ Stages 00-03: `data/corpus.parquet` (PubChem returned properties for 32,998 CIDs
 the M3 managed 2.3/s), `data/umap_coords.npz` (38 s). Output: `index.html` 0.18 MB plus 6.9 MB of data zips,
 of which the hover text is 6.0 MB (the description is stored once; IUPAC names are a third of it). An
 `embeddings_qwen3-0.6b.npz` comparison build was started locally the same day and is not part of the map.
-Published 2026-09-15: public repo github.com/stevenfazzio/ChEBI-20-datamap, Pages from `docs/`, live at
-https://stevenfazzio.com/ChEBI-20-datamap/ (the user site's custom domain), listed on stevenfazzio.com/projects/.
+Published 2026-09-15: public repo github.com/stevenfazzio/chebi-20-map, Pages from `docs/`, live at
+https://stevenfazzio.com/chebi-20-map/ (the user site's custom domain), listed on stevenfazzio.com/projects/.
 
 Two things learned on the way: bf16 normalisation leaves norms at 0.998-1.004, so `embedder.py`
 renormalises in float32 after the cast (the first pod run failed the unit-norm assertion for that reason);
