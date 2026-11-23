@@ -295,6 +295,22 @@ def add_open_graph(html_path, n_points: int, layout: str) -> None:
     atomic_write_text(html_path, text.replace("<head>", "<head>\n" + tags, 1))
 
 
+# Plausible analytics: the one site that covers all of stevenfazzio.com. The script
+# ignores localhost and file:// pages, so local previews stay out of the stats.
+PLAUSIBLE_SNIPPET = """<!-- Privacy-friendly analytics by Plausible -->
+<script async src="https://plausible.io/js/pa-dvmKWiL1gpqH63wOvMp-g.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init()
+</script>"""
+
+
+def add_analytics(html_path) -> None:
+    text = html_path.read_text(encoding="utf-8")
+    assert "</head>" in text, "no </head> in the rendered page"
+    atomic_write_text(html_path, text.replace("</head>", PLAUSIBLE_SNIPPET + "\n</head>", 1))
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--embedding", default=config.EMBED_MODEL_KEY, choices=sorted(config.EMBED_MODELS))
@@ -441,6 +457,7 @@ def main() -> None:
     html_path = out_dir / "index.html"
     plot.save(str(html_path))
     add_open_graph(html_path, len(corpus), layout)
+    add_analytics(html_path)
 
     print("output sizes:")
     total = 0
